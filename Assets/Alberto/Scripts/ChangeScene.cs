@@ -24,7 +24,7 @@ public class ChangeScene : MonoBehaviour
     public void FadeOut(int scene)
     {
         fundido.CrossFadeAlpha(1, 1, false);
-        SceneManager.LoadScene("Level2");
+        //SceneManager.LoadScene("Level2");
         StartCoroutine(CambioScene(escenas[scene]));
     }
     public void exit()
