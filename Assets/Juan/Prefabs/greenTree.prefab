@@ -101,7 +101,7 @@ MonoBehaviour:
   posX: 4
   posY: 1
   rootGrid: {fileID: 0}
-  tipe: 3
+  tipe: 2
 --- !u!61 &1912874027
 BoxCollider2D:
   m_ObjectHideFlags: 0

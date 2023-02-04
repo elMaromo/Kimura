@@ -2,34 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateWater : MonoBehaviour
+namespace juan
 {
-    public Casilla tipe;
-    public string stringTipe;
-
-    public bool activated;
-
-    private void Start()
+    public class ActivateWater : MonoBehaviour
     {
-        activated = false;
-    }
+        public Casilla tipe;
+        public string stringTipe;
 
-    private void Update()
-    {
-        Collider2D[] cols= Physics2D.OverlapCircleAll(transform.position, 0.1f);
+        public bool activated;
 
-        for (int i = 0; i < cols.Length; i++)
+        private void Start()
         {
-            if (cols[i].gameObject.tag == stringTipe)
-            {
-                activated = true;
-            }
+            activated = false;
         }
-        
-    }
 
-    public void deActivate()
-    {
-        activated = false;
+        private void Update()
+        {
+            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 0.1f);
+
+            for (int i = 0; i < cols.Length; i++)
+            {
+                if (cols[i].gameObject.tag == stringTipe)
+                {
+                    activated = true;
+                }
+            }
+
+        }
+
+        public void deActivate()
+        {
+            activated = false;
+        }
     }
 }
+

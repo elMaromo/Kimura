@@ -2,37 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckWin : MonoBehaviour
+namespace juan
 {
-    private Roots root;
-
-    private void Awake()
+    public class CheckWin : MonoBehaviour
     {
-        root = GetComponent<Roots>();
-    }
+        private Roots root;
 
-    private void Update()
-    {
-        bool won = checkIfWin();
-        
-        if( won )
+        private void Awake()
         {
-            Debug.Log("gane");
+            root = GetComponent<Roots>();
         }
-    }
 
-    private bool checkIfWin()
-    {
-        bool isWon = true;
-
-        for (int i = 0; i < root.Waters.Count; i++)
+        private void Update()
         {
-            if (!root.Waters[i].activated)
+            bool won = checkIfWin();
+
+            if (won)
             {
-                isWon = false;
+                Debug.Log("gane");
             }
         }
 
-        return isWon;
+        private bool checkIfWin()
+        {
+            bool isWon = true;
+
+            for (int i = 0; i < root.Waters.Count; i++)
+            {
+                if (!root.Waters[i].activated)
+                {
+                    isWon = false;
+                }
+            }
+
+            return isWon;
+        }
     }
+
 }
