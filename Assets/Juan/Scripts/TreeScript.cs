@@ -20,7 +20,7 @@ public class TreeScript : MonoBehaviour
     {
         won = false;
         roots.roots[posX, posY] = tipe;
-        roots.placeRoot(posX, posY, tipe);
+        roots.placeTile(posX, posY, tipe);
     }
 
     private void OnMouseDown()

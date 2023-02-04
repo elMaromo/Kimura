@@ -18,7 +18,7 @@ public class Roots : MonoBehaviour
 {
     public int numX, numY;
 
-    public GameObject greenRoot, redRoot, blueRoot;
+    public GameObject greenRoot, redRoot, blueRoot, rock;
     public Casilla[,] roots;
 
     
@@ -58,7 +58,7 @@ public class Roots : MonoBehaviour
                 {
                     Debug.Log("eo3");
                     roots[i, j] = tipe;
-                    placeRoot(i, j, tipe);
+                    placeTile(i, j, tipe);
                 }
             }
         }
@@ -98,9 +98,8 @@ public class Roots : MonoBehaviour
         return adyacent;
     }
 
-    public void placeRoot( int i, int j, Casilla tipe )
+    public void placeTile( int i, int j, Casilla tipe )
     {
-        Debug.Log("estoySacando");
         if( tipe == Casilla.greenRoot )
         {
             Instantiate(greenRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
@@ -114,6 +113,11 @@ public class Roots : MonoBehaviour
         if (tipe == Casilla.redRoot)
         {
             Instantiate(redRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
+        }
+
+        if (tipe == Casilla.rock)
+        {
+            Instantiate(rock, transform.position + new Vector3(i, j, 0), transform.rotation);
         }
     }
 
