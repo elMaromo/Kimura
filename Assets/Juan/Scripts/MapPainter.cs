@@ -56,6 +56,11 @@ namespace juan
                     root.roots[i, j] = Casilla.empty;
                 }
             }
+
+            for (int i = 0; i < root.Waters.Count; i++)
+            {
+                root.Waters[i].deActivate();
+            }
         }
 
 
@@ -103,7 +108,7 @@ namespace juan
 
                 if (parsed[i] == "5")
                 {
-                    root.roots[curCol, curRow] = Casilla.greenTree;
+                    root.roots[curCol, curRow] = Casilla.greenRoot;
                     root.placeTile(curCol, curRow, Casilla.greenTree);
                     curCol++;
                 }
@@ -117,7 +122,7 @@ namespace juan
 
                 if (parsed[i] == "7")
                 {
-                    root.roots[curCol, curRow] = Casilla.blueTree;
+                    root.roots[curCol, curRow] = Casilla.blueRoot;
                     root.placeTile(curCol, curRow, Casilla.blueTree);
                     curCol++;
                 }

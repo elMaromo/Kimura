@@ -85,7 +85,7 @@ namespace juan
                 }
             }
 
-            List<Move> movs = new List<Move>(); //**
+            List<Move> movs = new List<Move>();
 
             for (int i = 0; i < numX; i++)
             {
@@ -93,16 +93,14 @@ namespace juan
                 {
                     if (toExpand[i, j] == true)
                     {
-                        Debug.Log("eo3");
-
                         roots[i, j] = tipe;
-                        GameObject mobj = placeTile(i, j, tipe); //**
-                        Move m = new Move(i, j, mobj); //**
-                        movs.Add(m);                //*
+                        GameObject mobj = placeTile(i, j, tipe);
+                        Move m = new Move(i, j, mobj);
+                        movs.Add(m);                
                     }
                 }
             }
-            GameManager.instance.moveStack.Push(movs); //**
+            GameManager.instance.moveStack.Push(movs); 
 
 
         }
