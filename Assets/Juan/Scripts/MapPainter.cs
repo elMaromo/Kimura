@@ -146,12 +146,18 @@ namespace juan
                 {
                     m = movsl[i];
                     root.roots[m.X, m.Y] = Casilla.empty;
+
                     GameObject del = items.Find(x => x.transform.position == m.gObj.transform.position);
                     items.Remove(del);
+
                     Destroy(m.gObj);
+
+                    if (m.water != null)
+                        m.water.GetComponent<ActivateWater>().activated = false;
+
                 }
             }
-            
+
         }
 
     }

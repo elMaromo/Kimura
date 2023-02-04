@@ -95,12 +95,13 @@ namespace juan
                     {
                         roots[i, j] = tipe;
                         GameObject mobj = placeTile(i, j, tipe);
-                        Move m = new Move(i, j, mobj);
-                        movs.Add(m);                
+                        GameObject waterObj = checkWater(mobj.transform, tipe);
+                        Move m = new Move(i, j, mobj, waterObj);
+                        movs.Add(m);
                     }
                 }
             }
-            GameManager.instance.moveStack.Push(movs); 
+            GameManager.instance.moveStack.Push(movs);
 
 
         }
@@ -209,6 +210,24 @@ namespace juan
             }
 
             return newObj;
+        }
+
+        GameObject checkWater(Transform trans, Casilla tipe)
+        {
+            Collider2D[] cols = Physics2D.OverlapCircleAll(trans.position, 0.1f);
+            for (int i = 0; i < cols.Length; i++)
+            {
+                GameObject w = cols[i].gameObject;
+                if (w.CompareTag("water"))
+                {
+                    ActivateWater aw = w.GetComponent<ActivateWater>();
+                    if (aw.tipe == tipe)
+                        return w;
+                }
+
+
+            }
+            return null;
         }
 
     }
