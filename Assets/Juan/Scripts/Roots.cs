@@ -11,17 +11,24 @@ public enum Casilla
     blueRoot,
     greenWater,
     redWater,
-    blueWater
+    blueWater,
+    redTree,
+    greenTree,
+    blueTree
 }
 
 public class Roots : MonoBehaviour
 {
     public int numX, numY;
-
-    public GameObject greenRoot, redRoot, blueRoot, rock;
+    public GameObject rock;
+    public GameObject redRoot, greenRoot, blueRoot;
+    public GameObject redTree, greenTree, blueTree;
+    public GameObject redWater, greenWater, blueWater;
     public Casilla[,] roots;
 
-    
+    public List<GameObject> mapItems;
+
+
     private void Awake()
     {
         roots = new Casilla[numX, numY];
@@ -32,6 +39,8 @@ public class Roots : MonoBehaviour
                 roots[i,j] = Casilla.empty;
             }
         }
+
+        mapItems = new List<GameObject>();
     }
 
     public void Expand( Casilla tipe )
@@ -98,27 +107,73 @@ public class Roots : MonoBehaviour
         return adyacent;
     }
 
-    public void placeTile( int i, int j, Casilla tipe )
+    public GameObject placeTile( int i, int j, Casilla tipe, bool setTransparent = false )
     {
-        if( tipe == Casilla.greenRoot )
+        GameObject newObj = new GameObject();
+
+        if (tipe == Casilla.rock)
         {
-            Instantiate(greenRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
+            newObj = Instantiate(rock, transform.position + new Vector3(i, j, 0), transform.rotation);
+        }
+
+        if ( tipe == Casilla.redRoot)
+        {
+            newObj = Instantiate(redRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
+            mapItems.Add(newObj);
+        }
+
+        if (tipe == Casilla.greenRoot)
+        {
+            newObj = Instantiate(greenRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
+            mapItems.Add(newObj);
         }
 
         if (tipe == Casilla.blueRoot)
         {
-            Instantiate(blueRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
+            newObj = Instantiate(blueRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
+            mapItems.Add(newObj);
         }
 
-        if (tipe == Casilla.redRoot)
+        if (tipe == Casilla.redTree)
         {
-            Instantiate(redRoot, transform.position + new Vector3(i, j, 0), transform.rotation);
+            newObj = Instantiate(redTree, transform.position + new Vector3(i, j, 0), transform.rotation);
+            newObj.GetComponent<TreeScript>().initRoots(this);
         }
 
-        if (tipe == Casilla.rock)
+        if (tipe == Casilla.greenTree)
         {
-            Instantiate(rock, transform.position + new Vector3(i, j, 0), transform.rotation);
+            newObj = Instantiate(greenTree, transform.position + new Vector3(i, j, 0), transform.rotation);
+            newObj.GetComponent<TreeScript>().initRoots(this);
         }
+
+        if (tipe == Casilla.blueTree)
+        {
+            newObj = Instantiate(blueTree, transform.position + new Vector3(i, j, 0), transform.rotation);
+            newObj.GetComponent<TreeScript>().initRoots(this);
+        }
+
+        if (tipe == Casilla.redWater)
+        {
+            newObj = Instantiate(redWater, transform.position + new Vector3(i, j, 0), transform.rotation);
+        }
+
+        if (tipe == Casilla.greenWater)
+        {
+            newObj = Instantiate(greenWater, transform.position + new Vector3(i, j, 0), transform.rotation);
+        }
+
+        if (tipe == Casilla.blueWater)
+        {
+            newObj = Instantiate(blueWater, transform.position + new Vector3(i, j, 0), transform.rotation);
+        }
+
+
+        if ( setTransparent )
+        {
+            newObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        }
+
+        return newObj;
     }
 
 

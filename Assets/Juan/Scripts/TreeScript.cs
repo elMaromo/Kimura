@@ -9,25 +9,16 @@ public class TreeScript : MonoBehaviour
     public Casilla tipe;
 
     private Roots roots;
-    private bool won;
 
-    private void Awake()
+
+    public void initRoots(Roots iRoots)
     {
-        roots = rootGrid.GetComponent<Roots>();
+        roots = iRoots;
     }
 
-    private void Start()
-    {
-        won = false;
-        roots.roots[posX, posY] = tipe;
-        roots.placeTile(posX, posY, tipe);
-    }
 
     private void OnMouseDown()
     {
-        if( !won )
-        {
-            roots.Expand(tipe);
-        }
+        roots.Expand(tipe);
     }
 }

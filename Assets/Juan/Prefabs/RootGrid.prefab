@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4428840650050983233}
   - component: {fileID: 4428840650050983262}
+  - component: {fileID: 680650609}
   m_Layer: 0
   m_Name: RootGrid
   m_TagString: Untagged
@@ -46,6 +47,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numX: 12
   numY: 6
-  greenRoot: {fileID: 0}
+  rock: {fileID: 4901000790378329117, guid: ec09c4f106809be45a5b485a4e6b736e, type: 3}
   redRoot: {fileID: 7157652510443731515, guid: 8ac036819e22a91459acb732205e8ca9, type: 3}
+  greenRoot: {fileID: 0}
   blueRoot: {fileID: 0}
+  redTree: {fileID: 1195679961666021834, guid: 1d5d31fdc0245554780588722268c194, type: 3}
+  greenTree: {fileID: 1195679961666021834, guid: cb194d92ef178064f9c8d77139426bb4, type: 3}
+  blueTree: {fileID: 1195679961666021834, guid: 5caa78aeb2ebbdb47a4d22bf6bf6df46, type: 3}
+  redWater: {fileID: 7216227297698475548, guid: b032e094b17a84542bdf8b897d7db6d3, type: 3}
+  greenWater: {fileID: 0}
+  blueWater: {fileID: 0}
+--- !u!114 &680650609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428840650050983235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3542b280883b7a44fac9171ed48c7437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 0 0 0 4 1 1 1 1 2 1 1 1 1 0 0 0 0 1
+    1 1 1 2 1 1 1 1 0 0 1 0 1 1 1 1 2 1 1 1 1 3 0 0 0 1 1 1 1 2 1 1 1 1 1 1 1 1 1
+    1 1 1 2
