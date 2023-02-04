@@ -7,6 +7,7 @@ namespace juan
     public class CheckWin : MonoBehaviour
     {
         private Roots root;
+        public int nextLevel;
 
         private void Awake()
         {
@@ -19,7 +20,7 @@ namespace juan
 
             if (won)
             {
-                Debug.Log("gane");
+                ChangeScene.instance.FadeOut(nextLevel);
             }
         }
 
