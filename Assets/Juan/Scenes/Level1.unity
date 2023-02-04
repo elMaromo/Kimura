@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RootGrid
       objectReference: {fileID: 0}
+    - target: {fileID: 4428840650050983262, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
+      propertyPath: offset
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
 --- !u!1001 &9005311115594083107
