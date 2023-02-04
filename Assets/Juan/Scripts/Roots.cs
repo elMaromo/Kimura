@@ -27,6 +27,7 @@ public class Roots : MonoBehaviour
     public Casilla[,] roots;
 
     public List<GameObject> mapItems;
+    public List<ActivateWater> Waters;
 
 
     private void Awake()
@@ -41,19 +42,40 @@ public class Roots : MonoBehaviour
         }
 
         mapItems = new List<GameObject>();
+        Waters = new List<ActivateWater>();
     }
 
     public void Expand( Casilla tipe )
     {
-        Debug.Log("eo1");
         bool[,] toExpand = new bool[numX, numY];
         for ( int i = 0; i < numX; i++ )
         {
             for (int j = 0; j < numY; j++)
             {
-                if(roots[i,j] == Casilla.empty && AdyacentOfColor( i,  j, tipe) )
+                bool canBeExpand = false;
+
+                if(roots[i, j] == Casilla.empty )
                 {
-                    Debug.Log("eo2");
+                    canBeExpand = true;
+                }
+
+                if (roots[i, j] == Casilla.redWater)
+                {
+                    canBeExpand = true;
+                }
+
+                if (roots[i, j] == Casilla.greenWater)
+                {
+                    canBeExpand = true;
+                }
+
+                if (roots[i, j] == Casilla.blueWater)
+                {
+                    canBeExpand = true;
+                }
+
+                if (canBeExpand && AdyacentOfColor( i,  j, tipe) )
+                {
                     toExpand[i, j] = true;
                 }
             }
@@ -65,7 +87,6 @@ public class Roots : MonoBehaviour
             {
                 if (toExpand[i, j] == true)
                 {
-                    Debug.Log("eo3");
                     roots[i, j] = tipe;
                     placeTile(i, j, tipe);
                 }
@@ -109,7 +130,7 @@ public class Roots : MonoBehaviour
 
     public GameObject placeTile( int i, int j, Casilla tipe, bool setTransparent = false )
     {
-        GameObject newObj = new GameObject();
+        GameObject newObj = null;
 
         if (tipe == Casilla.rock)
         {
@@ -155,16 +176,19 @@ public class Roots : MonoBehaviour
         if (tipe == Casilla.redWater)
         {
             newObj = Instantiate(redWater, transform.position + new Vector3(i, j, 0), transform.rotation);
+            Waters.Add(newObj.GetComponent<ActivateWater>());
         }
 
         if (tipe == Casilla.greenWater)
         {
             newObj = Instantiate(greenWater, transform.position + new Vector3(i, j, 0), transform.rotation);
+            Waters.Add(newObj.GetComponent<ActivateWater>());
         }
 
         if (tipe == Casilla.blueWater)
         {
             newObj = Instantiate(blueWater, transform.position + new Vector3(i, j, 0), transform.rotation);
+            Waters.Add(newObj.GetComponent<ActivateWater>());
         }
 
 

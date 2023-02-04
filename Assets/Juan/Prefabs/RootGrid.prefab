@@ -57,6 +57,8 @@ MonoBehaviour:
   redWater: {fileID: 7216227297698475548, guid: b032e094b17a84542bdf8b897d7db6d3, type: 3}
   greenWater: {fileID: 0}
   blueWater: {fileID: 0}
+  mapItems: []
+  Waters: []
 --- !u!114 &680650609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3542b280883b7a44fac9171ed48c7437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 0 0 0 4 1 1 1 1 2 1 1 1 1 0 0 0 0 1
-    1 1 1 2 1 1 1 1 0 0 1 0 1 1 1 1 2 1 1 1 1 3 0 0 0 1 1 1 1 2 1 1 1 1 1 1 1 1 1
+  content: 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 0 0 0 0 1 1 1 1 2 1 1 1 1 0 0 0 0 1
+    1 1 1 2 1 1 1 1 0 0 1 0 1 1 1 1 2 1 1 1 1 0 0 0 0 1 1 1 1 2 1 1 1 1 1 1 1 1 1
     1 1 1 2
