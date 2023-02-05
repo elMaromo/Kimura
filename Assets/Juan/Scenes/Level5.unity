@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0c4ca42b1d9c114589c47bb7bdfa557, type: 3}
---- !u!1001 &353712639
+--- !u!1001 &1267002759
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -271,10 +271,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2833058471666652329, guid: 42f3d52a89c71c64292bab405c857d7d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bf5afc8d1c6ef7b40bad01ac7716a45e, type: 3}
     - target: {fileID: 2833058471666652330, guid: 42f3d52a89c71c64292bab405c857d7d, type: 3}
       propertyPath: m_Name
       value: BackGround
       objectReference: {fileID: 0}
+    - target: {fileID: 7929230349816913805, guid: 42f3d52a89c71c64292bab405c857d7d, type: 3}
+      propertyPath: sp1
+      value: 
+      objectReference: {fileID: 21300000, guid: bf5afc8d1c6ef7b40bad01ac7716a45e, type: 3}
+    - target: {fileID: 7929230349816913805, guid: 42f3d52a89c71c64292bab405c857d7d, type: 3}
+      propertyPath: sp2
+      value: 
+      objectReference: {fileID: 21300000, guid: c87e3d38f8e8dc34384ba6f850d375e1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42f3d52a89c71c64292bab405c857d7d, type: 3}
 --- !u!1 &1897853814
@@ -431,13 +443,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 680650609, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
       propertyPath: content
-      value: 1 1 1 1 1 1 1 1 1 1 1 1 2 1 0 0 0 0 0 0 0 0 0 0 1 2 1 0 0 0 0 0 0 0
-        0 0 0 1 2 1 0 0 0 0 0 0 0 0 0 0 1 2 1 3 5 7 0 1 1 0 8 6 4 1 2 1 1 1 1 1 1
-        1 1 1 1 1 1 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 878114669, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
-      propertyPath: nextLevel
-      value: 3
+      value: 1 4 1 1 1 8 0 1 1 1 1 1 2 1 0 6 0 1 1 0 1 1 1 1 1 2 1 0 1 0 1 1 0 1
+        1 1 1 1 2 1 0 0 0 0 0 0 0 0 0 7 1 2 1 3 1 1 1 0 1 0 1 1 1 1 2 1 1 1 1 1 0
+        0 5 1 1 1 1 2
       objectReference: {fileID: 0}
     - target: {fileID: 4428840650050983233, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
       propertyPath: m_RootOrder
@@ -487,7 +495,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: RootGrid
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4428840650050983262, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
+    - {fileID: 680650609, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 375453079f2155a4cabbe23a700fe082, type: 3}
 --- !u!1001 &9005311115594083107
 PrefabInstance:

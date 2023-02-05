@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Juan/Scenes/Level4.unity
     guid: 29294d09319601144875827b89fa56c6
+  - enabled: 1
+    path: Assets/Juan/Scenes/Level5.unity
+    guid: 966fe78459867ee4fb6117df36db0674
   m_configObjects: {}
