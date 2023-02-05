@@ -8,10 +8,12 @@ namespace juan
     {
         private Roots root;
         public int nextLevel;
+        private AudioSource audi;
 
         private void Awake()
         {
             root = GetComponent<Roots>();
+            audi = GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -28,13 +30,22 @@ namespace juan
         {
             bool isWon = true;
 
-            for (int i = 0; i < root.Waters.Count; i++)
+            if( root )
             {
-                if (!root.Waters[i].activated)
+                for (int i = 0; i < root.Waters.Count; i++)
                 {
-                    isWon = false;
+                    if (!root.Waters[i].activated)
+                    {
+                        isWon = false;
+                    }
                 }
             }
+            else
+            {
+                return false;
+            }
+
+            audi.Play();
 
             return isWon;
         }

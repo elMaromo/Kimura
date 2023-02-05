@@ -11,10 +11,12 @@ namespace juan
 
         private Roots roots;
         private SpriteRenderer sp;
+        private AudioSource audi;
 
         public void Awake()
         {
             sp = GetComponent<SpriteRenderer>();
+            audi = GetComponent<AudioSource>();
         }
 
         public void initRoots(Roots iRoots)
@@ -26,6 +28,7 @@ namespace juan
         private void OnMouseDown()
         {
             roots.Expand(tipe);
+            audi.Play();
         }
 
         public void OnMouseEnter()
