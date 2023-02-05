@@ -41,7 +41,7 @@ namespace juan
 
         }
 
-        void ClearMap()
+        public void ClearMap()
         {
             for (int i = 0; i < root.mapItems.Count; i++)
             {
@@ -136,7 +136,7 @@ namespace juan
             }
         }
 
-        void ClearLastMoves() //***
+        public void ClearLastMoves() //***
         {
             if (GameManager.instance.moveStack.Count > 0)
             {
